@@ -110,9 +110,11 @@ public class MarkdownParseTest {
         ArrayList<String> correctOutput6 = new ArrayList<>();
         ArrayList<String> correctOutput7 = new ArrayList<>();
         ArrayList<String> correctOutput8 = new ArrayList<>();
+        //ArrayList<String> correctOutput9 = new ArrayList<>();
 
         correctOutput1.addAll(Arrays.asList("https://something.com","some-page.html"));
         correctOutput2.addAll(Arrays.asList("https://something.com", "some-page.html", "https://something.com", "some-page.html"));
+        //correctOutput9.addAll(Arrays.asList("https://something.com", "some-page.html", "www.name1.com"));
 
         Path fileName1 = Path.of("test-file.md");
         Path fileName2 = Path.of("test-file2.md");
@@ -122,6 +124,7 @@ public class MarkdownParseTest {
         Path fileName6 = Path.of("test-file6.md");
         Path fileName7 = Path.of("test-file7.md");
         Path fileName8 = Path.of("test-file8.md");
+        //Path fileName9 = Path.of("test-file9.md");
 
         // read the file contents into a string
 	    String contents1 = Files.readString(fileName1);
@@ -132,6 +135,8 @@ public class MarkdownParseTest {
 	    String contents6 = Files.readString(fileName6);
 	    String contents7 = Files.readString(fileName7);
 	    String contents8 = Files.readString(fileName8);
+        String contents9 = Files.readString(fileName9);
+
 
         // run getLinks on the contents of the file
         ArrayList<String> links1 = MarkdownParse.getLinks(contents1);
@@ -142,6 +147,7 @@ public class MarkdownParseTest {
         ArrayList<String> links6 = MarkdownParse.getLinks(contents6);
         ArrayList<String> links7 = MarkdownParse.getLinks(contents7);
         ArrayList<String> links8 = MarkdownParse.getLinks(contents8);
+        ArrayList<String> links9 = MarkdownParse.getLinks(contents9);
 
         assertEquals(correctOutput1,links1);
         assertEquals(correctOutput2,links2);
@@ -151,6 +157,8 @@ public class MarkdownParseTest {
         assertEquals(correctOutput6,links6);
         assertEquals(correctOutput7,links7);
         assertEquals(correctOutput8,links8);
+        assertEquals(correctOutput3,links9);
+
     }
 }
 

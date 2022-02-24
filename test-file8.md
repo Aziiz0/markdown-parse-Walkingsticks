@@ -1,2 +1,2 @@
-[](a link on the first line)
+[alink]( link on the first line)
 [

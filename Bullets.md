@@ -1,0 +1,1 @@
+* any trailing spaces in a link
